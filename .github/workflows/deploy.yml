@@ -1,0 +1,33 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Login to Docker Hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKER_HUB_USERNAME }}
+        password: ${{ secrets.DOCKER_HUB_TOKEN }}
+    
+    - name: Build and push PRD image
+      if: github.ref == 'refs/heads/main'
+      run: |
+        docker build -t yourdockerhub/centolab-prd:latest .
+        docker push yourdockerhub/centolab-prd:latest
+        ssh ubuntu@51.77.58.125 "docker pull yourdockerhub/centolab-prd:latest && docker-compose -f /path/to/prd/docker-compose.yml up -d"
+    
+    - name: Build and push DEV image
+      if: github.ref == 'refs/heads/dev'
+      run: |
+        docker build -t yourdockerhub/centolab-dev:latest .
+        docker push yourdockerhub/centolab-dev:latest
+        ssh ubuntu@51.77.58.125 "docker pull yourdockerhub/centolab-dev:latest && docker-compose -f /path/to/dev/docker-compose.yml up -d"
