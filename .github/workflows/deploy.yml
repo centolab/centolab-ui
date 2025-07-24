@@ -23,11 +23,11 @@ jobs:
       run: |
         docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-prd:latest .
         docker push ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-prd:latest
-        ssh ubuntu@51.77.58.125 "docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-prd:latest && docker-compose -f /path/to/prd/docker-compose.yml up -d"
+        ssh -o StrictHostKeyChecking=no ubuntu@51.77.58.125 "docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-prd:latest && docker-compose -f /path/to/prd/docker-compose.yml up -d"
     
     - name: Build and push DEV image
       if: github.ref == 'refs/heads/dev'
       run: |
         docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-dev:latest .
         docker push ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-dev:latest
-        ssh ubuntu@51.77.58.125 "docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-dev:latest && docker-compose -f /path/to/dev/docker-compose.yml up -d"
+        ssh -o StrictHostKeyChecking=no ubuntu@51.77.58.125 "docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-dev:latest && docker-compose -f /path/to/dev/docker-compose.yml up -d"
