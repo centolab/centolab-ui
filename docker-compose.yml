@@ -1,0 +1,8 @@
+version: '3'
+services:
+  app:
+    image: centolab/centolab-${ENV:-dev}:latest
+    container_name: centolab-${ENV:-dev}
+    restart: always
+    ports:
+      - "3000:80"
