@@ -30,21 +30,21 @@ jobs:
       run: |
         docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-prd:latest .
         docker push ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-prd:latest
-        ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }} "mkdir -p ~/docker/prd && chmod 755 ~/docker"
-        scp -v docker-compose.yml ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }}:~/docker/prd/docker-compose.yml
+        ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }} "mkdir -p ~/docker-prd && chmod 700 ~/docker-prd"
+        scp docker-compose.yml ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }}:~/docker-prd/docker-compose.yml
         ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }} \
-          "cd ~/docker/prd && \
+          "cd ~/docker-prd && \
           docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-prd:latest && \
-          ENV=prd docker-compose up -d"
+          ENV=prd docker-compose -f docker-compose.yml up -d"
     
     - name: Build and push DEV image
       if: github.ref == 'refs/heads/dev'
       run: |
         docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-dev:latest .
         docker push ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-dev:latest
-        ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }} "mkdir -p ~/docker/dev && chmod 755 ~/docker"
-        scp -v docker-compose.yml ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }}:~/docker/dev/docker-compose.yml
+        ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }} "mkdir -p ~/docker-dev && chmod 700 ~/docker-dev"
+        scp docker-compose.yml ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }}:~/docker-dev/docker-compose.yml
         ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }} \
-          "cd ~/docker/dev && \
+          "cd ~/docker-dev && \
           docker pull ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-dev:latest && \
-          ENV=dev docker-compose up -d"
+          ENV=dev docker-compose -f docker-compose.yml up -d"
