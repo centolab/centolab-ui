@@ -18,7 +18,7 @@
 			</picture>
 		</span>
 
-		to your new<br />SvelteKit app
+		Questo è DEV
 	</h1>
 
 	<h2>
