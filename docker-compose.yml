@@ -4,4 +4,4 @@ services:
     container_name: centolab-${ENV:-dev}
     restart: always
     ports:
-      - "3000:80"
+      - "${PORT:-3000}:80"
