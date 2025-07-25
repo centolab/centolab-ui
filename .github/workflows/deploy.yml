@@ -30,6 +30,7 @@ jobs:
       run: |
         docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-prd:latest .
         docker push ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-prd:latest
+        ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }} "mkdir -p ~/docker/prd"
         scp docker-compose.yml ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }}:~/docker/prd/
         ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }} \
           "cd ~/docker/prd && \
@@ -41,6 +42,7 @@ jobs:
       run: |
         docker build -t ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-dev:latest .
         docker push ${{ secrets.DOCKER_HUB_USERNAME }}/centolab-dev:latest
+        ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }} "mkdir -p ~/docker/dev"
         scp docker-compose.yml ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }}:~/docker/dev/
         ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.VPS_IP }} \
           "cd ~/docker/dev && \
