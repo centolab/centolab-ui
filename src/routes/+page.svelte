@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Centolab</title>
+	<title>Centolab Test</title>
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
