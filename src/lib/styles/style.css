@@ -1378,12 +1378,12 @@ nav.main-menu {
 * ----------------------------------------------------------------------------------------
 */
 .services-area {
-	padding: 100px 0px;
+	padding-top: 100px;
 }
 
-.info-service-area {
+/* .info-service-area {
 	padding-bottom: 100px;
-}
+} */
 
 .info-item {
 	-webkit-transition: 0.5s;
@@ -1393,6 +1393,9 @@ nav.main-menu {
 	border-radius: 15px 15px 0px 15px;
 	border: 1px solid #bebebe;
 	overflow: hidden;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .info-item p {
@@ -1400,9 +1403,10 @@ nav.main-menu {
 	font-size: 18px;
 	line-height: 28px;
 	font-weight: 500;
+	margin-bottom: 40px;
 }
 .info-item img {
-	margin-top: 40px;
+	margin-top: auto;
 	border-radius: 10px 0px 0px 10px;
 }
 
@@ -1419,6 +1423,7 @@ nav.main-menu {
 	border: 1px solid #bebebe;
 	text-align: center;
 	margin-bottom: 30px;
+	height: 100%;
 }
 
 .service-item .content p {
@@ -2190,7 +2195,7 @@ ul.extra-skills li i {
 * ----------------------------------------------------------------------------------------
 */
 .any-questions-area {
-	padding: 100px 0px;
+	padding: 50px 0px;
 }
 .accordion {
 	padding-left: 30px;

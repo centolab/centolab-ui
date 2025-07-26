@@ -5,15 +5,13 @@
 				<div class="col-lg-4">
 					<div class="copyright-text">
 						<p>
-							Copyright <a href="/">&copy;DesignPro</a> All Rights Reserved.
+							Copyright <a href="/">&copy;centolab</a> All Rights Reserved.
 						</p>
 					</div>
 				</div>
 				<div class="col-lg-8">
 					<div class="footer-bottom-menu">
 						<ul>
-							<li><a href="#project">Latest Project</a></li>
-							<li><a href="#pricing">Pricing</a></li>
 							<li><a href="#book">Contact</a></li>
 							<li><a href="/">Privacy Policy</a></li>
 							<li><a href="/">Terms & conditions</a></li>

@@ -97,7 +97,7 @@
 										href="#how"
 										on:click={(e) => handleNavClick(e, '#how')}
 									>
-										How it works
+										Come funziona
 									</a>
 								</li>
 								<li>
@@ -106,10 +106,10 @@
 										href="#service"
 										on:click={(e) => handleNavClick(e, '#service')}
 									>
-										Services
+										Servizi
 									</a>
 								</li>
-								<li>
+								<!-- <li>
 									<a
 										class="nav-link-click {activeLink === '#project' ? 'active' : ''}"
 										href="#project"
@@ -126,7 +126,7 @@
 									>
 										Pricing
 									</a>
-								</li>
+								</li> -->
 								<li>
 									<a
 										class="nav-link-click {activeLink === '#faqs' ? 'active' : ''}"
@@ -142,7 +142,7 @@
 										href="#book"
 										on:click={(e) => handleNavClick(e, '#book')}
 									>
-										Book Now
+										Contatti
 									</a>
 								</li>
 							</ul>

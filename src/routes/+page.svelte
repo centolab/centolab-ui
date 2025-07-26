@@ -20,15 +20,15 @@
 <Preloader />
 <Header />
 <HeroSection />
-<RecentProject />
+<!-- <RecentProject />
 <Partners />
-<About />
+<About /> -->
 <WorkProcess />
 <Services />
-<Portfolio />
-<Testimonial />
+<!-- <Portfolio />
+<Testimonial /> -->
 <Features />
-<Pricing />
+<!-- <Pricing /> -->
 <Faq />
 <Contact />
 <Footer />
