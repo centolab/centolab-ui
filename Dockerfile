@@ -1,14 +1,22 @@
 FROM node:20-alpine as builder
 WORKDIR /app
 
-# Installa le dipendenze con cache ottimizzata
+# Installa le dipendenze
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM nginx:alpine
-# Percorso corretto per l'output di SvelteKit
-COPY --from=builder /app/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/conf.d/default.conf
-EXPOSE 80
+FROM node:20-alpine as runner
+WORKDIR /app
+
+# Copia i file necessari
+COPY --from=builder /app/build /app/build
+COPY --from=builder /app/package.json /app/package.json
+COPY --from=builder /app/node_modules /app/node_modules
+
+# Installa serve per eseguire l'applicazione
+RUN npm install -g serve
+
+EXPOSE 3000
+CMD ["node", "build"]
