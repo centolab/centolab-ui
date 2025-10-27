@@ -5,7 +5,7 @@
 				<div class="col-lg-4">
 					<div class="copyright-text">
 						<p>
-							Copyright <a href="/">&copy;centolab</a> All Rights Reserved.
+							Copyright <a href="/">&copy;centolab</a> Tutti i diritti riservati.
 						</p>
 					</div>
 				</div>

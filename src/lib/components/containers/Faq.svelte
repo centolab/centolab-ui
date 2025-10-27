@@ -65,8 +65,8 @@
 				<div class="book-call-intro text-center">
 					
 					<h2>Cosa aspetti?</h2>
-					<a href="/" class="theme-btn">Chiedi un preventivo</a>
-					<p>Preferisci le e-mail? <a href="mailto:giacomo@centolab.it">giacomo@centolab.it</a></p>
+					<a href="mailto:info@centolab.it" class="theme-btn">Chiedi un preventivo</a>
+					<p>Preferisci le e-mail? <a href="mailto:info@centolab.it">info@centolab.it</a></p>
 				</div>
 			</div>
 			<div class="col-lg-8 col-md-6">

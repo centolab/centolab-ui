@@ -8,7 +8,7 @@
 						Ottieni un preventivo gratuito e senza impegno per il tuo progetto web. Scopri come possiamo aiutarti a realizzare il sito dei tuoi sogni.
 					</p>
 					<div class="hero-btns">
-						<a href="#book" class="theme-btn">Chiedi un preventivo</a>
+						<a href="mailto:info@centolab.it" class="theme-btn">Chiedi un preventivo</a>
 					</div>
 					<a href="/"><img  style="margin-top:15px;" src="/images/logos/logo.png" alt="Logo" title="Logo" /></a>
 				</div>

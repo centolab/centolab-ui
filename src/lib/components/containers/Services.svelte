@@ -16,7 +16,7 @@
 						<h4>Siti Web Professionali</h4>
             			<p>Realizziamo siti vetrina moderni e performanti, ottimizzati per convertire i tuoi visitatori in clienti.</p>
 					</div>
-					<img src="/images/services/service1.jpg" alt="Product Design" />
+					<img src="/images/services/service1.png" alt="Product Design" />
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6">
@@ -25,7 +25,7 @@
 						<h4>Web Application</h4>
             			<p>Soluzioni personalizzate per gestire la tua attività: dal CRM agli strumenti per team.</p>
 					</div>
-					<img src="/images/services/service2.jpg" alt="Graphics Design" />
+					<img src="/images/services/service2.png" alt="Graphics Design" />
 				</div>
 			</div>
 			<div class="col-lg-4 col-md-6">
@@ -34,7 +34,7 @@
 						<h4>Manutenzione & SEO</h4>
             			<p>Aggiornamenti, sicurezza e posizionamento: il tuo sito sempre al top.</p>
 					</div>
-					<img src="/images/services/service3.jpg" alt="Marketing" />
+					<img src="/images/services/service3.png" alt="Marketing" />
 				</div>
 			</div>
 		</div>
